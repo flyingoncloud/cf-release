@@ -4,11 +4,13 @@ name: haproxy
 description: "The HAProxy server can be used to terminate SSL in front of the Routers. Each HAProxy instance should point to multiple Routers."
 
 packages:
+- common
 - haproxy
 
 templates:
-  haproxy.config.erb:        config/haproxy.config
+  haproxy.ctmpl.erb:         config/haproxy.ctmpl
   haproxy_ctl:               bin/haproxy_ctl
+  consul_template_ctl:       bin/consul_template_ctl
   cert.pem.erb:              config/cert.pem
 
 properties:
